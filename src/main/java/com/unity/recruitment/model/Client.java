@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -27,6 +28,7 @@ public class Client implements Serializable{
 	private String surname;
 	@Setter
 	@Getter
+	@NonNull
 	private Address address;
 	@Setter
 	@Getter

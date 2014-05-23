@@ -39,10 +39,9 @@ public class lombokTestForClients {
 		assertNotNull(toString);
 
 	}
-	
+
 	@Test
-	public void regexDoubleTest() throws Exception
-	{
+	public void regexDoubleTest() throws Exception {
 		String input = "123";
 		assertTrue(input.matches("-?\\d+(\\.\\d+)?"));
 		input = "123.22";
@@ -52,13 +51,12 @@ public class lombokTestForClients {
 		input = "-123.22";
 		assertTrue(input.matches("-?\\d+(\\.\\d+)?"));
 	}
-	
+
 	@Test
-	public void regexIntegerTest() throws Exception
-	{
+	public void regexIntegerTest() throws Exception {
 		String input = "123";
-		assertTrue(input.matches("\\d+")); 
-		input = "123.22";                 
+		assertTrue(input.matches("\\d+"));
+		input = "123.22";
 		assertFalse(input.matches("\\d+"));
 		input = "123.22a";
 		assertFalse(input.matches("\\d+"));
@@ -66,5 +64,17 @@ public class lombokTestForClients {
 		assertFalse(input.matches("\\d+"));
 		input = "-123";
 		assertFalse(input.matches("\\d+"));
+	}
+
+	@Test
+	public void clientsShouldReturnException() throws Exception {
+		Address address = new Address("Wroclaw", "XYZ 36", "7", "55-400");
+		boolean exception = false;
+		try {
+			Client client1 = new Client(1, "Michal", "Kowalik", null, 200.20d);
+		} catch (NullPointerException e) {
+			exception = true;
+		}
+		assertTrue(exception);
 	}
 }
