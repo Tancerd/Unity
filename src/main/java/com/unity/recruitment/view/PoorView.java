@@ -117,7 +117,7 @@ public class PoorView {
 
 		if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 			String path = chooser.getSelectedFile().toString();
-			System.out.println(path);
+			//System.out.println(path);
 			DataStatus status = facade.loadFile(path);
 			if (status == DataStatus.LOADED) {
 				JOptionPane.showMessageDialog(null, FILELOADED);
